@@ -1,5 +1,6 @@
-
+const {move_up_key,move_down,move_left,move_right} = require('./constants')
 let connection;
+
 const setupInput = function (conn) {
  connection = conn;
   const stdin = process.stdin;
@@ -10,16 +11,16 @@ const setupInput = function (conn) {
     if (data === '\u0003') { // Check if Ctrl + C (End of text) is pressed
       process.exit(); // Exit the process
     }
-    else if(data === "w"){
-      connection.write("Move: up");
-    }else if (data === "a"){
+    else if(data === move_up_key){
+      connection.write("Move: up"); 
+    }else if (data === move_left){
       connection.write("Move: left");
     }
-    else if (data === "s"){
+    else if (data === move_down){
       connection.write("Move: down");
-    }else if (data === "d"){
+    }else if (data === move_right){
       connection.write("Move: right");
-    }else if (data === "z"){
+    }else {
       connection.write("Say:🐱‍👤🐱‍👤🐱‍👤");
     }
    
