@@ -10,19 +10,15 @@ const connect = function () {
   conn.on("connect",()=>{
     console.log("successfully connected to the game server");
     conn.write("Name:OLU");
-    setInterval(function(){
-     // conn.write("Move: up");
-    },50)
-    //conn.write("Move: up");
-  });
- 
+    conn.write("Move: up");
 
-
+    })
   //Interpret incoming data as text
   conn.setEncoding("utf8");
 
   conn.on('data',(data)=>{
     console.log(` ${data}`);
+
   })
   return conn;
 
