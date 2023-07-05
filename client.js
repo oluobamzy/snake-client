@@ -4,13 +4,19 @@ const net = require("net");
 
 const connect = function () {
   const conn = net.createConnection({
-    host:"localhost",
+    host:"165.227.47.243",
     port: "50541"
   });
   conn.on("connect",()=>{
     console.log("successfully connected to the game server");
     conn.write("Name:OLU");
-  })
+    setInterval(function(){
+     // conn.write("Move: up");
+    },50)
+    //conn.write("Move: up");
+  });
+ 
+
 
   //Interpret incoming data as text
   conn.setEncoding("utf8");
