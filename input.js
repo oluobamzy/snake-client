@@ -19,7 +19,10 @@ const setupInput = function (conn) {
       connection.write("Move: down");
     }else if (data === "d"){
       connection.write("Move: right");
+    }else if (data === "z"){
+      connection.write("Say:🐱‍👤🐱‍👤🐱‍👤");
     }
+   
   };
   stdin.on("data", handleUserInput);
 
